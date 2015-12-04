@@ -55,11 +55,11 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };
-static const char *termcmd[]  = { "urxvtcd", NULL };
+static const char *termcmd[]  = { "st", NULL };
 static const char *browsecmd[]  = { "firefox", NULL };
 static const char *altbrowsecmd[]  = { "chromium", NULL };
-static const char *editorcmd[]  = { "urxvtcd", "-e", "vim", NULL };
-static const char *moncmd[]  = { "urxvtcd", "-e", "htop", NULL };
+static const char *editorcmd[]  = { "st", "-e", "vim", NULL };
+static const char *moncmd[]  = { "st", "-e", "htop", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
