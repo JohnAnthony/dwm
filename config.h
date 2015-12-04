@@ -7,10 +7,10 @@ static const char *fonts[] = {
 static const char dmenufont[]       = "monospace:size=10";
 static const char normbordercolor[] = "#444444";
 static const char normbgcolor[]     = "#222222";
-static const char normfgcolor[]     = "#bbbbbb";
+static const char normfgcolor[]     = "#ffffff";
 static const char selbordercolor[]  = "#005577";
 static const char selbgcolor[]      = "#005577";
-static const char selfgcolor[]      = "#eeeeee";
+static const char selfgcolor[]      = "#ffffff";
 static const unsigned int borderpx  = 1;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
@@ -59,6 +59,7 @@ static const char *termcmd[]  = { "urxvtcd", NULL };
 static const char *browsecmd[]  = { "firefox", NULL };
 static const char *altbrowsecmd[]  = { "chromium", NULL };
 static const char *editorcmd[]  = { "urxvtcd", "-e", "vim", NULL };
+static const char *moncmd[]  = { "urxvtcd", "-e", "htop", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -67,6 +68,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_n,      spawn,          {.v = browsecmd } },
 	{ MODKEY|ShiftMask,             XK_n,      spawn,          {.v = altbrowsecmd } },
 	{ MODKEY,                       XK_e,      spawn,          {.v = editorcmd } },
+	{ MODKEY,                       XK_z,      spawn,          {.v = moncmd } },
 	{ MODKEY,                       XK_q,      killclient,     {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
