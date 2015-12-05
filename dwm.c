@@ -175,7 +175,7 @@ static long getstate(Window w);
 static int gettextprop(Window w, Atom atom, char *text, unsigned int size);
 static void grabbuttons(Client *c, int focused);
 static void grabkeys(void);
-static void incnmaster(const Arg *arg);
+//static void incnmaster(const Arg *arg);
 static void keypress(XEvent *e);
 static void killclient(const Arg *arg);
 static void manage(Window w, XWindowAttributes *wa);
@@ -207,7 +207,7 @@ static void showhide(Client *c);
 static void sigchld(int unused);
 static void spawn(const Arg *arg);
 static void tag(const Arg *arg);
-static void tagmon(const Arg *arg);
+//static void tagmon(const Arg *arg);
 static void tile(Monitor *);
 static void togglebar(const Arg *arg);
 static void togglefloating(const Arg *arg);
@@ -232,7 +232,7 @@ static Monitor *wintomon(Window w);
 static int xerror(Display *dpy, XErrorEvent *ee);
 static int xerrordummy(Display *dpy, XErrorEvent *ee);
 static int xerrorstart(Display *dpy, XErrorEvent *ee);
-static void zoom(const Arg *arg);
+//static void zoom(const Arg *arg);
 
 /* variables */
 static const char broken[] = "broken";
@@ -978,12 +978,14 @@ grabkeys(void)
 	}
 }
 
+/*
 void
 incnmaster(const Arg *arg)
 {
 	selmon->nmaster = MAX(selmon->nmaster + arg->i, 0);
 	arrange(selmon);
 }
+*/
 
 #ifdef XINERAMA
 static int
@@ -1655,6 +1657,7 @@ tag(const Arg *arg)
 	}
 }
 
+/*
 void
 tagmon(const Arg *arg)
 {
@@ -1662,6 +1665,7 @@ tagmon(const Arg *arg)
 		return;
 	sendmon(selmon->sel, dirtomon(arg->i));
 }
+*/
 
 void
 tile(Monitor *m)
@@ -2106,6 +2110,7 @@ xerrorstart(Display *dpy, XErrorEvent *ee)
 	return -1;
 }
 
+/*
 void
 zoom(const Arg *arg)
 {
@@ -2119,6 +2124,7 @@ zoom(const Arg *arg)
 			return;
 	pop(c);
 }
+*/
 
 int
 main(int argc, char *argv[])
