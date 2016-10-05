@@ -5,16 +5,15 @@ static const char *fonts[] = {
 	"terminus:size=8"
 };
 static const char dmenufont[]       = "terminus:size=8";
-static const char normbordercolor[] = "#444444";
-static const char normbgcolor[]     = "#222222";
-static const char normfgcolor[]     = "#ffffff";
-static const char selbordercolor[]  = "#005577";
-static const char selbgcolor[]      = "#005577";
-static const char selfgcolor[]      = "#ffffff";
 static const unsigned int borderpx  = 1;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
+static const char *colors[SchemeLast][3]      = {
+	/*               fg         bg         border   */
+	[SchemeNorm] = { "#ffffff", "#222222", "#444444" },
+	[SchemeSel] =  { "#ffffff", "#005577",  "#005577" },
+};
 
 /* tagging */
 static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9", "0" };
@@ -55,7 +54,7 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };
+static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", "#222222", "-nf", "#ffffff", "-sb", "#005577", "-sf", "#ffffff", NULL };
 static const char *termcmd[]  = { "st", NULL };
 static const char *alttermcmd[]  = { "st", "-e", "tmux", NULL };
 static const char *browsecmd[]  = { "firefox", NULL };
