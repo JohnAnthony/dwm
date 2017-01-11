@@ -2,9 +2,9 @@
 
 /* appearance */
 static const char *fonts[] = {
-	"terminus:size=8"
+	"xos4 Terminus:size=8"
 };
-static const char dmenufont[]       = "terminus:size=8";
+static const char dmenufont[]       = "xos4 Terminus:size=8";
 static const unsigned int borderpx  = 1;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
