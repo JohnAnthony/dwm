@@ -63,6 +63,8 @@ static const char *editorcmd[]  = { "st", "-e", "vim", NULL };
 static const char *moncmd[]  = { "st", "-e", "htop", NULL };
 static const char *mixcmd[]  = { "st", "-e", "alsamixer", NULL };
 static const char *lockcmd[]  = { "slock", NULL };
+static const char *filebrowsercmd[]  = { "thunar", NULL };
+static const char *mailcmd[]  = { "firefox", "https://mail.tutanota.com" };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -71,10 +73,12 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = alttermcmd } },
 	{ MODKEY,                       XK_n,      spawn,          {.v = browsecmd } },
 	{ MODKEY|ShiftMask,             XK_n,      spawn,          {.v = altbrowsecmd } },
+	{ MODKEY,                       XK_m,      spawn,          {.v = mailcmd } },
 	{ MODKEY,                       XK_e,      spawn,          {.v = editorcmd } },
 	{ MODKEY,                       XK_z,      spawn,          {.v = moncmd } },
 	{ MODKEY,                       XK_a,      spawn,          {.v = mixcmd } },
 	{ MODKEY,                       XK_x,      spawn,          {.v = lockcmd } },
+	{ MODKEY,                       XK_t,      spawn,          {.v = filebrowsercmd } },
 	{ MODKEY,                       XK_q,      killclient,     {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
