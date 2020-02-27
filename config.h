@@ -56,6 +56,7 @@ static const Layout layouts[] = {
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", "#222222", "-nf", "#ffffff", "-sb", "#005577", "-sf", "#ffffff", NULL };
 static const char *termcmd[]  = { "st", NULL };
+static const char *filescmd[]  = { "st", "-e", "rover", NULL };
 static const char *alttermcmd[]  = { "st", "-e", "tmux", NULL };
 static const char *browsecmd[]  = { "firefox", NULL };
 static const char *altbrowsecmd[]  = { "chromium", NULL };
@@ -63,7 +64,8 @@ static const char *editorcmd[]  = { "st", "-e", "vim", NULL };
 static const char *moncmd[]  = { "st", "-e", "htop", NULL };
 static const char *mixcmd[]  = { "st", "-e", "alsamixer", NULL };
 static const char *lockcmd[]  = { "slock", NULL };
-static const char *filebrowsercmd[]  = { "thunar", NULL };
+static const char *filebrowsercmd[]  = { "st", "-e", "nnn", NULL };
+static const char *altfilebrowsercmd[]  = { "thunar", NULL };
 static const char *mailcmd[]  = { "firefox", "https://mail.tutanota.com" };
 
 static Key keys[] = {
@@ -79,6 +81,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_a,      spawn,          {.v = mixcmd } },
 	{ MODKEY,                       XK_x,      spawn,          {.v = lockcmd } },
 	{ MODKEY,                       XK_t,      spawn,          {.v = filebrowsercmd } },
+	{ MODKEY|ShiftMask,             XK_t,      spawn,          {.v = altfilebrowsercmd } },
 	{ MODKEY,                       XK_q,      killclient,     {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
