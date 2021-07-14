@@ -60,6 +60,7 @@ static const char *filescmd[]  = { "st", "-e", "rover", NULL };
 static const char *alttermcmd[]  = { "st", "-e", "tmux", NULL };
 static const char *browsecmd[]  = { "firefox", NULL };
 static const char *altbrowsecmd[]  = { "chromium", NULL };
+static const char *altaltbrowsecmd[]  = { "firefox", "-P", "po", "--no-remote", NULL };
 static const char *editorcmd[]  = { "gvim", NULL };
 static const char *moncmd[]  = { "st", "-e", "htop", NULL };
 static const char *mixcmd[]  = { "st", "-e", "alsamixer", NULL };
@@ -68,7 +69,7 @@ static const char *steamcmd[]  = { "steam-runtime", NULL };
 static const char *keycmd[]  = { "kgpg", "-k", NULL };
 static const char *filebrowsercmd[]  = { "st", "-e", "nnn", NULL };
 static const char *altfilebrowsercmd[]  = { "thunar", NULL };
-static const char *mailcmd[]  = { "firefox", "https://mail.tutanota.com" };
+static const char *mailcmd[]  = { "tutanota", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -77,6 +78,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = alttermcmd } },
 	{ MODKEY,                       XK_n,      spawn,          {.v = browsecmd } },
 	{ MODKEY|ShiftMask,             XK_n,      spawn,          {.v = altbrowsecmd } },
+	{ MODKEY,                       XK_p,      spawn,          {.v = altaltbrowsecmd } },
 	{ MODKEY,                       XK_m,      spawn,          {.v = mailcmd } },
 	{ MODKEY,                       XK_e,      spawn,          {.v = editorcmd } },
 	{ MODKEY,                       XK_z,      spawn,          {.v = moncmd } },
