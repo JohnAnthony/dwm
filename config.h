@@ -4,7 +4,7 @@
 static const char *fonts[] = {
 	"xos4 Terminus:size=8"
 };
-static const char dmenufont[]       = "xos4 Terminus:size=8";
+static const char dmenufont[]       = "xos4 Terminus:size=16";
 static const unsigned int borderpx  = 1;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
@@ -55,7 +55,7 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", "#222222", "-nf", "#ffffff", "-sb", "#005577", "-sf", "#ffffff", NULL };
+static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", "#222222", "-nf", "#ffffff", "-sb", "#005577", "-sf", "#ffffff", "-l", "30", NULL };
 static const char *termcmd[]  = { "st", NULL };
 static const char *filescmd[]  = { "st", "-e", "rover", NULL };
 static const char *alttermcmd[]  = { "st", "-e", "tmux", NULL };
@@ -64,7 +64,7 @@ static const char *altbrowsecmd[]  = { "chromium", NULL };
 static const char *altaltbrowsecmd[]  = { "firefox", "-P", "po", "--no-remote", NULL };
 static const char *editorcmd[]  = { "gvim", NULL };
 static const char *moncmd[]  = { "st", "-e", "htop", NULL };
-static const char *mixcmd[]  = { "st", "-e", "alsamixer", NULL };
+static const char *mixcmd[]  = { "st", "-e", "pulsemixer", NULL };
 static const char *lockcmd[]  = { "slock", NULL };
 static const char *steamcmd[]  = { "steam-runtime", NULL };
 static const char *keycmd[]  = { "kgpg", "-k", NULL };
