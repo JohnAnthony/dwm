@@ -2,9 +2,9 @@
 
 /* appearance */
 static const char *fonts[] = {
-	"xos4 Terminus:size=8"
+	"xos4 Terminus:size=24"
 };
-static const char dmenufont[]       = "xos4 Terminus:size=8";
+static const char dmenufont[]       = "xos4 Terminus:size=24";
 static const unsigned int borderpx  = 1;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
@@ -64,7 +64,7 @@ static const char *altbrowsecmd[]  = { "chromium", NULL };
 static const char *altaltbrowsecmd[]  = { "firefox", "-P", "po", "--no-remote", NULL };
 static const char *editorcmd[]  = { "gvim", NULL };
 static const char *moncmd[]  = { "st", "-e", "htop", NULL };
-static const char *mixcmd[]  = { "st", "-e", "alsamixer", NULL };
+static const char *mixcmd[]  = { "st", "-e", "pulsemixer", NULL };
 static const char *lockcmd[]  = { "slock", NULL };
 static const char *steamcmd[]  = { "steam-runtime", NULL };
 static const char *keycmd[]  = { "kgpg", "-k", NULL };
