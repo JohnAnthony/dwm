@@ -57,7 +57,6 @@ static const Layout layouts[] = {
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", "#222222", "-nf", "#ffffff", "-sb", "#005577", "-sf", "#ffffff", "-l", "30", NULL };
 static const char *termcmd[]  = { "st", NULL };
-static const char *filescmd[]  = { "st", "-e", "rover", NULL };
 static const char *alttermcmd[]  = { "st", "-e", "tmux", NULL };
 static const char *browsecmd[]  = { "firefox", NULL };
 static const char *altbrowsecmd[]  = { "chromium", NULL };
@@ -67,10 +66,7 @@ static const char *moncmd[]  = { "st", "-e", "htop", NULL };
 static const char *mixcmd[]  = { "st", "-e", "pulsemixer", NULL };
 static const char *lockcmd[]  = { "slock", NULL };
 static const char *steamcmd[]  = { "steam-runtime", NULL };
-static const char *keycmd[]  = { "kgpg", "-k", NULL };
-static const char *filebrowsercmd[]  = { "st", "-e", "nnn", NULL };
-static const char *altfilebrowsercmd[]  = { "thunar", NULL };
-static const char *mailcmd[]  = { "tutanota", NULL };
+static const char *filescmd[]  = { "st", "-e", "ranger", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -80,15 +76,12 @@ static Key keys[] = {
 	{ MODKEY,                       XK_n,      spawn,          {.v = browsecmd } },
 	{ MODKEY|ShiftMask,             XK_n,      spawn,          {.v = altbrowsecmd } },
 	{ MODKEY,                       XK_p,      spawn,          {.v = altaltbrowsecmd } },
-	{ MODKEY,                       XK_m,      spawn,          {.v = mailcmd } },
 	{ MODKEY,                       XK_e,      spawn,          {.v = editorcmd } },
 	{ MODKEY,                       XK_z,      spawn,          {.v = moncmd } },
 	{ MODKEY,                       XK_a,      spawn,          {.v = mixcmd } },
 	{ MODKEY,                       XK_x,      spawn,          {.v = lockcmd } },
 	{ MODKEY,                       XK_s,      spawn,          {.v = steamcmd } },
-	{ MODKEY,                       XK_c,      spawn,          {.v = keycmd } },
-	{ MODKEY,                       XK_t,      spawn,          {.v = filebrowsercmd } },
-	{ MODKEY|ShiftMask,             XK_t,      spawn,          {.v = altfilebrowsercmd } },
+	{ MODKEY,                       XK_t,      spawn,          {.v = filescmd } },
 	{ MODKEY,                       XK_q,      killclient,     {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
