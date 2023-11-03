@@ -71,6 +71,7 @@ static const char *keycmd[]  = { "kgpg", "-k", NULL };
 static const char *filebrowsercmd[]  = { "st", "-e", "nnn", NULL };
 static const char *altfilebrowsercmd[]  = { "thunar", NULL };
 static const char *mailcmd[]  = { "tutanota", NULL };
+static const char *youtubecmd[]  = { "freetube", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -89,6 +90,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_c,      spawn,          {.v = keycmd } },
 	{ MODKEY,                       XK_t,      spawn,          {.v = filebrowsercmd } },
 	{ MODKEY|ShiftMask,             XK_t,      spawn,          {.v = altfilebrowsercmd } },
+	{ MODKEY,                       XK_v,      spawn,          {.v = youtubecmd } },
 	{ MODKEY,                       XK_q,      killclient,     {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
