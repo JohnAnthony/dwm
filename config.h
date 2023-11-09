@@ -1,5 +1,12 @@
 /* See LICENSE file for copyright and license details. */
 
+#define NormFg "#ffffff"
+#define NormBg "#222222"
+#define NormBd "#444444"
+#define SelFg "#ffffff"
+#define SelBg "#005577"
+#define SelBd "#005577"
+
 /* appearance */
 static const char *fonts[] = {
 	"xos4 Terminus:size=8"
@@ -10,9 +17,9 @@ static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const char *colors[][3]      = {
-	/*               fg         bg         border   */
-	[SchemeNorm] = { "#ffffff", "#222222", "#444444" },
-	[SchemeSel] =  { "#ffffff", "#005577",  "#005577" },
+	/*               fg      bg      border   */
+	[SchemeNorm] = { NormFg, NormBg, NormBd },
+	[SchemeSel] =  { SelFg,  SelBg,  SelBd },
 };
 
 /* tagging */
@@ -55,7 +62,17 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", "#222222", "-nf", "#ffffff", "-sb", "#005577", "-sf", "#ffffff", "-l", "30", NULL };
+static const char *dmenucmd[] = {
+	"dmenu_run",
+	"-m", dmenumon,
+	"-fn", dmenufont,
+	"-nb", NormBg,
+	"-nf", NormFg,
+	"-sb", SelBg,
+	"-sf", SelFg,
+	"-l", "30",
+	NULL,
+};
 static const char *termcmd[]  = { "st", NULL };
 static const char *alttermcmd[]  = { "st", "-e", "tmux", "-u", NULL };
 static const char *browsecmd[]  = { "firefox", NULL };
@@ -67,6 +84,7 @@ static const char *mixcmd[]  = { "st", "-e", "pulsemixer", NULL };
 static const char *lockcmd[]  = { "slock", NULL };
 static const char *steamcmd[]  = { "steam-runtime", NULL };
 static const char *filescmd[]  = { "st", "-e", "ranger", NULL };
+static const char *youtubecmd[]  = { "freetube", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -82,6 +100,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_x,      spawn,          {.v = lockcmd } },
 	{ MODKEY,                       XK_s,      spawn,          {.v = steamcmd } },
 	{ MODKEY,                       XK_t,      spawn,          {.v = filescmd } },
+	{ MODKEY,                       XK_v,      spawn,          {.v = youtubecmd } },
 	{ MODKEY,                       XK_q,      killclient,     {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
